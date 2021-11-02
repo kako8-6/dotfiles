@@ -28,16 +28,16 @@ readonly LXQT_IMG=void-live-${ARCH}-${DATE}-lxqt.iso
 
 readonly GRUB="grub-i386-efi grub-x86_64-efi"
 
-readonly BASE_PKGS="dialog cryptsetup lvm2 mdadm void-docs-browse $GRUB"
-readonly X_PKGS="$BASE_PKGS xorg-minimal xorg-input-drivers xorg-video-drivers setxkbmap xauth font-misc-misc terminus-font dejavu-fonts-ttf alsa-plugins-pulseaudio"
-readonly E_PKGS="$X_PKGS lxdm enlightenment terminology udisks2 firefox-esr"
-readonly XFCE_PKGS="$X_PKGS lxdm xfce4 gnome-themes-standard gnome-keyring network-manager-applet gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
-readonly MATE_PKGS="$X_PKGS lxdm mate mate-extra gnome-keyring network-manager-applet gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
-readonly CINNAMON_PKGS="$X_PKGS lxdm cinnamon gnome-keyring colord gnome-terminal gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
-readonly GNOME_PKGS="$BASE_PKGS gdm gnome polkit-gnome rhythmbox geary firefox chrome-gnome-shell gvfs-goa gvfs-mtp dbus zramen brightnessctl nano flatpak xorg-minimal mesa-dri mesa-vulkan-intel mesa-vaapi xdg-user-dirs xdg-utils xdg-desktop-portal glxinfo bash-completion htop neofetch ffmpeg ufw thermald base-devel xtools git chrony pulseaudio alsa-plugins-pulseaudio font-adobe-source-code-pro fonts-droid-ttf noto-fonts-emoji liberation-fonts-ttf dejavu-fonts-ttf noto-fonts-ttf"
-readonly KDE_PKGS="$BASE_PKGS kde5 kde5-baseapps ark spectacle sddm kdialog kwrite kdegraphics-thumbnailers plasma-browser-integration plasma-firewall qview okular firefox mpv dbus zramen brightnessctl nano flatpak xorg-minimal mesa-dri mesa-vulkan-intel mesa-vaapi xdg-user-dirs xdg-utils xdg-desktop-portal glxinfo bash-completion htop neofetch ffmpeg ffmpegthumbs ufw thermald base-devel xtools git chrony pulseaudio alsa-plugins-pulseaudio font-adobe-source-code-pro fonts-droid-ttf noto-fonts-emoji liberation-fonts-ttf dejavu-fonts-ttf noto-fonts-ttf"
-readonly LXDE_PKGS="$X_PKGS lxdm lxde gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
-readonly LXQT_PKGS="$X_PKGS lxdm lxqt gvfs-afc gvfs-mtp gvfs-smb udisks2 qupzilla"
+readonly BASE_PKGS="$GRUB dialog cryptsetup lvm2 mdadm void-docs-browse dbus zramen brightnessctl nano flatpak xorg-minimal mesa-dri mesa-vulkan-intel mesa-vaapi xdg-user-dirs xdg-utils xdg-desktop-portal glxinfo bash-completion htop neofetch ffmpeg ufw thermald base-devel xtools git chrony pulseaudio alsa-plugins-pulseaudio font-adobe-source-code-pro fonts-droid-ttf noto-fonts-emoji liberation-fonts-ttf dejavu-fonts-ttf noto-fonts-ttf"
+#readonly X_PKGS="$BASE_PKGS xorg-minimal xorg-input-drivers xorg-video-drivers setxkbmap xauth font-misc-misc terminus-font dejavu-fonts-ttf alsa-plugins-pulseaudio"
+#readonly E_PKGS="$X_PKGS lxdm enlightenment terminology udisks2 firefox-esr"
+#readonly XFCE_PKGS="$X_PKGS lxdm xfce4 gnome-themes-standard gnome-keyring network-manager-applet gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
+#readonly MATE_PKGS="$X_PKGS lxdm mate mate-extra gnome-keyring network-manager-applet gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
+readonly CINNAMON_PKGS="$BASE_PKGS gnome cinnamon gvfs-goa gvfs-mtp rhythmbox geary firefox"
+readonly GNOME_PKGS="$BASE_PKGS gdm gnome polkit-gnome chrome-gnome-shell gvfs-goa gvfs-mtp rhythmbox geary firefox"
+readonly KDE_PKGS="$BASE_PKGS sddm kde5 kde5-baseapps kdegraphics-thumbnailers plasma-browser-integration plasma-firewall ark spectacle kdialog kwrite  qview okular firefox mpv"
+#readonly LXDE_PKGS="$X_PKGS lxdm lxde gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
+#readonly LXQT_PKGS="$X_PKGS lxdm lxqt gvfs-afc gvfs-mtp gvfs-smb udisks2 qupzilla"
 
 [ ! -x mklive.sh ] && exit 0
 
