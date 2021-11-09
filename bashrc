@@ -24,4 +24,4 @@ alias xro='sudo xbps-remove -O'    # Desinstalar pkg obsoletos
 alias xrm='sudo xbps-remove'       # Desinstalar pkg
 alias xse='xbps-query -Rs'         # Buscar pkg repos
 alias xry='xbps-query -s'          # Buscar pkg local
-alias Xse='xbps-query -R'         # Buscar pkg dependencias
+alias Xse='xbps-query -R'          # Buscar pkg dependencias
