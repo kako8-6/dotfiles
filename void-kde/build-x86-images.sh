@@ -35,7 +35,7 @@ readonly BASE_PKGS="$GRUB dialog cryptsetup lvm2 mdadm void-docs-browse dbus zra
 #readonly MATE_PKGS="$X_PKGS lxdm mate mate-extra gnome-keyring network-manager-applet gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
 #readonly CINNAMON_PKGS="$BASE_PKGS lightdm lightdm-gtk3-greeter lightdm-gtk-greeter-settings cinnamon gvfs-goa gvfs-mtp rhythmbox geary firefox"
 readonly GNOME_PKGS="$BASE_PKGS gdm gnome polkit-gnome chrome-gnome-shell gvfs-goa gvfs-mtp rhythmbox geary firefox"
-readonly KDE_PKGS="$BASE_PKGS sddm kde5 kde5-baseapps kdegraphics-thumbnailers plasma-browser-integration plasma-firewall ark spectacle kdialog kwrite qview okular firefox"
+readonly KDE_PKGS="$BASE_PKGS sddm kde5 kde5-baseapps kdegraphics-thumbnailers plasma-browser-integration plasma-firewall ark spectacle kdialog kwrite qView okular firefox"
 #readonly LXDE_PKGS="$X_PKGS lxdm lxde gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
 #readonly LXQT_PKGS="$X_PKGS lxdm lxqt gvfs-afc gvfs-mtp gvfs-smb udisks2 qupzilla"
 
