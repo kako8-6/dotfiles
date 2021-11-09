@@ -11,17 +11,18 @@ alias grep='grep --color=auto'
 git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-PS1="\[\033[1;32m\]\W\[\033[33m\]\$(git_branch)\[\033[00m\] > "
+PS1="\[\033[1;32m\]\w\[\033[33m\]\$(git_branch)\[\033[00m\] > "
 
 # Alias Runit
 alias svs='sudo sv status /var/service/*'
 
 # Alias XBPS
-alias xup='sudo xbps-install -Su'
-alias xin='sudo xbps-install -S'
-alias xrmd='sudo xbps-remove -R'
-alias xrm='sudo xbps-remove'
-alias xse='xbps-query -Rs'
-alias xry='xbps-query -s'
-alias Xse='xbps-query -RX'
-alias Xry='xbps-query -X'
+alias xup='sudo xbps-install -Su'  # Actualizar sistema
+alias xin='sudo xbps-install -S'   # Instalar pkg
+alias xrmd='sudo xbps-remove -R'   # Desinstalar pkg con dependencias
+alias xro='sudo xbps-remove -O'    # Desinstalar pkg obsoletos
+alias xrm='sudo xbps-remove'       # Desinstalar pkg
+alias xse='xbps-query -Rs'         # Buscar pkg repos
+alias xry='xbps-query -s'          # Buscar pkg local
+alias Xse='xbps-query -RX'         # Buscar pkg dependencias
+alias Xry='xbps-query -X'          # ¿?
