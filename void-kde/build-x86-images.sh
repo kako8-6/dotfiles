@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ARCH=x86_64
-IMAGE=gnome
+IMAGE=i3wm
 
 while getopts "a:b:hr:" opt; do
 case $opt in
@@ -25,6 +25,7 @@ readonly GNOME_IMG=void-live-${ARCH}-${DATE}-gnome.iso
 readonly KDE_IMG=void-live-${ARCH}-${DATE}-kde.iso
 readonly LXDE_IMG=void-live-${ARCH}-${DATE}-lxde.iso
 readonly LXQT_IMG=void-live-${ARCH}-${DATE}-lxqt.iso
+readonly I3WM_IMG=void-live-${ARCH}-${DATE}-i3wm.iso
 
 readonly GRUB="grub-i386-efi grub-x86_64-efi"
 
@@ -38,6 +39,7 @@ readonly GNOME_PKGS="$BASE_PKGS gdm gnome polkit-gnome chrome-gnome-shell gvfs-g
 readonly KDE_PKGS="$BASE_PKGS sddm kde5 kde5-baseapps kdegraphics-thumbnailers plasma-browser-integration plasma-firewall ark spectacle kdialog kwrite qView okular firefox"
 #readonly LXDE_PKGS="$X_PKGS lxdm lxde gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
 #readonly LXQT_PKGS="$X_PKGS lxdm lxqt gvfs-afc gvfs-mtp gvfs-smb udisks2 qupzilla"
+readonly I3WM_PKGS="$BASE_PKGS i3-gaps i3lock i3status i3wsr gvfs-goa gvfs-mtp picom NetworkManager dunst gnome-themes-extra gnome-themes-standard adwaita-icon-theme rofi feh setxkbmap nautilus file-roller mpv lxterminal pavucontrol lxappearance firefox"
 
 [ ! -x mklive.sh ] && exit 0
 
@@ -87,4 +89,9 @@ if [ "$IMAGE" = kde ]; then
 	if [ ! -e $KDE_IMG ]; then
 		./mklive.sh -a $ARCH -o $KDE_IMG -p "$KDE_PKGS" ${REPO} "$@"
 	fi
+fi
+if [ -z "$IMAGE" -o "$IMAGE" = i3wm ]; then
+        if [ ! -e $I3WM_IMG ]; then
+                ./mklive.sh -a $ARCH -o $I3WM_IMG -p "$I3WM_PKGS" ${REPO} "$@"
+        fi
 fi
