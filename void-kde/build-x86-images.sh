@@ -1,7 +1,7 @@
 #!/bin/sh
 
 ARCH=x86_64
-IMAGE=i3wm
+IMAGE=
 
 while getopts "a:b:hr:" opt; do
 case $opt in
