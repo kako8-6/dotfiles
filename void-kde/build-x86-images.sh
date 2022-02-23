@@ -29,7 +29,7 @@ readonly I3WM_IMG=void-live-${ARCH}-${DATE}-i3wm.iso
 
 readonly GRUB="grub-i386-efi grub-x86_64-efi"
 
-readonly BASE_PKGS="$GRUB dialog cryptsetup lvm2 mdadm void-docs-browse dbus zramen brightnessctl nano opendoas flatpak xorg-minimal mesa-dri mesa-vulkan-intel mesa-vaapi mesa-vdpau xdg-user-dirs xdg-utils xdg-desktop-portal glxinfo bash-completion htop neofetch wget preload ffmpeg ufw thermald base-devel xtools git chrony pulseaudio alsa-plugins-pulseaudio font-adobe-source-code-pro fonts-droid-ttf noto-fonts-emoji liberation-fonts-ttf dejavu-fonts-ttf noto-fonts-ttf"
+readonly BASE_PKGS="$GRUB dialog cryptsetup lvm2 mdadm void-docs-browse dbus zramen brightnessctl nano flatpak xorg-minimal mesa-dri mesa-vulkan-intel mesa-vaapi mesa-vdpau xdg-user-dirs xdg-utils xdg-desktop-portal glxinfo bash-completion htop neofetch wget preload ffmpeg ufw thermald base-devel xtools git chrony pulseaudio alsa-plugins-pulseaudio font-adobe-source-code-pro fonts-droid-ttf noto-fonts-emoji liberation-fonts-ttf dejavu-fonts-ttf noto-fonts-ttf"
 #readonly X_PKGS="$BASE_PKGS xorg-minimal xorg-input-drivers xorg-video-drivers setxkbmap xauth font-misc-misc terminus-font dejavu-fonts-ttf alsa-plugins-pulseaudio"
 #readonly E_PKGS="$X_PKGS lxdm enlightenment terminology udisks2 firefox-esr"
 readonly XFCE_PKGS="$BASE_PKGS lightdm lightdm-gtk3-greeter lightdm-gtk-greeter-settings xfce4 xfce4-plugins gnome-themes-standard gnome-keyring numlockx network-manager-applet blueman scrot gvfs-mtp xarchiver xdg-desktop-portal-gtk udisks2 transmission-gtk redshift firefox"
