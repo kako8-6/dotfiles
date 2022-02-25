@@ -3,4 +3,6 @@ lightdm cursor
 [Icon Theme]
 Inherits=Adwaita
 
-
+settings xfce atajos
+scrot /home/carlos/Imágenes/Capturas/%d_%m_%Y.png
+/usr/bin/xfce4-popup-whiskermenu
