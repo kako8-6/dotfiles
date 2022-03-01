@@ -3,15 +3,16 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Alias general
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-
 # Prompt
 git_branch() {
      git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 PS1="\[\033[1;32m\]\w\[\033[33m\]\$(git_branch)\[\033[00m\] > "
+
+# Alias general
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias gtop='sudo intel_gpu_top'
 
 # Alias Runit
 alias svs='sudo sv status /var/service/*'
@@ -29,3 +30,5 @@ alias Xse='xbps-query -R'          # Buscar pkg dependencias
 # Alias Governor
 alias powersave='echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
 alias performance='echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
+alias cgovernor='cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
+
