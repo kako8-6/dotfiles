@@ -39,7 +39,7 @@ readonly GNOME_PKGS="$BASE_PKGS gdm gnome polkit-gnome gvfs-goa gvfs-mtp rhythmb
 readonly KDE_PKGS="$BASE_PKGS sddm kde5 kde5-baseapps ark spectacle kdialog kwrite qView okular firefox"
 #readonly LXDE_PKGS="$X_PKGS lxdm lxde gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
 #readonly LXQT_PKGS="$X_PKGS lxdm lxqt gvfs-afc gvfs-mtp gvfs-smb udisks2 qupzilla"
-readonly I3WM_PKGS="$BASE_PKGS i3-gaps i3lock i3status i3wsr gvfs-goa gvfs-mtp picom NetworkManager dunst gnome-themes-extra gnome-themes-standard adwaita-icon-theme rofi feh setxkbmap nautilus file-roller mpv lxterminal pavucontrol lxappearance firefox"
+readonly I3WM_PKGS="$BASE_PKGS i3-gaps i3lock i3status i3wsr dunst gvfs-mtp picom scrot NetworkManager gnome-themes-standard feh pcmanfm xarchiver mpv gpicview lxterminal pavucontrol lxappearance firefox"
 
 [ ! -x mklive.sh ] && exit 0
 
