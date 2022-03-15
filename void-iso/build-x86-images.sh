@@ -1,13 +1,13 @@
 #!/bin/sh
 
 ARCH=x86_64
-IMAGE=
+IMAGE=xfce
 
 while getopts "a:b:hr:" opt; do
 case $opt in
 	a) ARCH="$OPTARG";;
 	b) IMAGE="$OPTARG";;
-	h) echo "${0#/*}: [-a arch] [-b base|e|xfce|mate|cinnamon|gnome|kde|lxde|lxqt] [-r repo]" >&2; exit 1;;
+	h) echo "${0#/*}: [-a arch] [-b base|e|xfce|mate|cinnamon|gnome|kde|lxde|lxqt|i3wm] [-r repo]" >&2; exit 1;;
 	r) REPO="-r $OPTARG $REPO";;
 esac
 done
@@ -16,15 +16,16 @@ shift $((OPTIND - 1))
 : ${ARCH:=$(uname -m)}
 
 readonly DATE=$(date +%Y%m%d)
+
 readonly BASE_IMG=void-live-${ARCH}-${DATE}.iso
-readonly E_IMG=void-live-${ARCH}-${DATE}-enlightenment.iso
+#readonly E_IMG=void-live-${ARCH}-${DATE}-enlightenment.iso
 readonly XFCE_IMG=void-live-${ARCH}-${DATE}-xfce.iso
-readonly MATE_IMG=void-live-${ARCH}-${DATE}-mate.iso
-readonly CINNAMON_IMG=void-live-${ARCH}-${DATE}-cinnamon.iso
+#readonly MATE_IMG=void-live-${ARCH}-${DATE}-mate.iso
+#readonly CINNAMON_IMG=void-live-${ARCH}-${DATE}-cinnamon.iso
 readonly GNOME_IMG=void-live-${ARCH}-${DATE}-gnome.iso
 readonly KDE_IMG=void-live-${ARCH}-${DATE}-kde.iso
-readonly LXDE_IMG=void-live-${ARCH}-${DATE}-lxde.iso
-readonly LXQT_IMG=void-live-${ARCH}-${DATE}-lxqt.iso
+#readonly LXDE_IMG=void-live-${ARCH}-${DATE}-lxde.iso
+#readonly LXQT_IMG=void-live-${ARCH}-${DATE}-lxqt.iso
 readonly I3WM_IMG=void-live-${ARCH}-${DATE}-i3wm.iso
 
 readonly GRUB="grub-i386-efi grub-x86_64-efi"
@@ -32,9 +33,9 @@ readonly GRUB="grub-i386-efi grub-x86_64-efi"
 readonly BASE_PKGS="$GRUB dialog cryptsetup lvm2 mdadm void-docs-browse void-repo-nonfree zramen socklog-void irqbalance earlyoom brightnessctl nano flatpak xorg-minimal mesa-dri mesa-vulkan-intel intel-video-accel libva-utils intel-gpu-tools glxinfo xdg-user-dirs xdg-utils xdg-desktop-portal bash-completion htop neofetch wget preload ffmpeg ufw thermald base-devel xtools git chrony pulseaudio alsa-plugins-pulseaudio font-adobe-source-code-pro fonts-droid-ttf noto-fonts-emoji liberation-fonts-ttf dejavu-fonts-ttf noto-fonts-ttf cantarell-fonts"
 #readonly X_PKGS="$BASE_PKGS xorg-minimal xorg-input-drivers xorg-video-drivers setxkbmap xauth font-misc-misc terminus-font dejavu-fonts-ttf alsa-plugins-pulseaudio"
 #readonly E_PKGS="$X_PKGS lxdm enlightenment terminology udisks2 firefox-esr"
-readonly XFCE_PKGS="$BASE_PKGS lightdm lightdm-gtk3-greeter lightdm-gtk-greeter-settings xfce4 xfce4-whiskermenu-plugin xfce4-pulseaudio-plugin thunar-archive-plugin gnome-themes-standard gnome-keyring numlockx network-manager-applet blueman scrot gvfs-mtp papirus-icon-theme xarchiver xdg-desktop-portal-gtk udisks2 redshift gparted firefox"
+readonly XFCE_PKGS="$BASE_PKGS lightdm lightdm-gtk3-greeter lightdm-gtk-greeter-settings xfce4 xfce4-whiskermenu-plugin xfce4-pulseaudio-plugin thunar-archive-plugin gnome-themes-standard gnome-keyring numlockx network-manager-applet blueman scrot gvfs-mtp papirus-icon-theme xarchiver xdg-desktop-portal-gtk udisks2 redshift gufw gparted firefox"
 #readonly MATE_PKGS="$X_PKGS lxdm mate mate-extra gnome-keyring network-manager-applet gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
-#readonly CINNAMON_PKGS="$BASE_PKGS lightdm lightdm-gtk3-greeter lightdm-gtk-greeter-settings cinnamon gvfs-goa gvfs-mtp rhythmbox geary firefox"
+#readonly CINNAMON_PKGS="$X_PKGS lxdm cinnamon gnome-keyring colord gnome-terminal gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
 readonly GNOME_PKGS="$BASE_PKGS gdm gnome polkit-gnome gvfs-goa gvfs-mtp firefox"
 readonly KDE_PKGS="$BASE_PKGS sddm kde5 kde5-baseapps ark spectacle kdialog kwrite qView mpv firefox"
 #readonly LXDE_PKGS="$X_PKGS lxdm lxde gvfs-afc gvfs-mtp gvfs-smb udisks2 firefox-esr"
@@ -55,7 +56,7 @@ if [ -z "$IMAGE" -o "$IMAGE" = e ]; then
 fi
 if [ -z "$IMAGE" -o "$IMAGE" = xfce ]; then
 	if [ ! -e $XFCE_IMG ]; then
-		./mklive.sh -a $ARCH -o $XFCE_IMG -i lz4 -v linux5.15 -C "i8042.nopnp loglevel=0 console=tty2 udev.log_level=0" -l es_HN.UTF-8 -k la-latin1 -p "$XFCE_PKGS"  ${REPO} "$@"		
+		./mklive.sh -a $ARCH -o $XFCE_IMG -i lz4 -s lzo -v linux5.15 -C "i8042.nopnp loglevel=0 console=tty2 udev.log_level=0" -l es_HN.UTF-8 -k la-latin1 -p "$XFCE_PKGS"  ${REPO} "$@"
 	fi
 fi
 if [ -z "$IMAGE" -o "$IMAGE" = mate ]; then
