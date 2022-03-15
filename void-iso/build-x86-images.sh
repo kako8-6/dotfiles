@@ -55,7 +55,7 @@ if [ -z "$IMAGE" -o "$IMAGE" = e ]; then
 fi
 if [ -z "$IMAGE" -o "$IMAGE" = xfce ]; then
 	if [ ! -e $XFCE_IMG ]; then
-		./mklive.sh -a $ARCH -o $XFCE_IMG -p "$XFCE_PKGS" ${REPO} "$@"
+		./mklive.sh -a $ARCH -o $XFCE_IMG -i lz4 -v linux5.15 -C "i8042.nopnp loglevel=0 console=tty2 udev.log_level=0" -l es_HN.UTF-8 -k la-latin1 -p "$XFCE_PKGS"  ${REPO} "$@"		
 	fi
 fi
 if [ -z "$IMAGE" -o "$IMAGE" = mate ]; then
