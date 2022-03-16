@@ -6,7 +6,7 @@ GRUB_DEFAULT=0
 #GRUB_HIDDEN_TIMEOUT_QUIET=false
 GRUB_TIMEOUT=1
 GRUB_DISTRIBUTOR="Void"
-GRUB_CMDLINE_LINUX_DEFAULT="quiet i8042.nopnp"
+GRUB_CMDLINE_LINUX_DEFAULT="i8042.nopnp loglevel=0 console=tty2 udev.log_level=0"
 # Uncomment to use basic console
 GRUB_TERMINAL_INPUT=console
 # Uncomment to disable graphical terminal
