@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Timeshift
+Comment=System Restore Utility
+Comment[es]=Utilidad de restauración del sistema
+Comment[ca]=Utilitat de restauració del sistema
+Comment[cs]=Nástroj pro obnovení systému
+Comment[da]=Værktøj til systemgendannelse
+Comment[fr]=Utilitaire de restauration système
+Comment[hr]=Alat obnove sustava
+Comment[lt]=Sistemos atkūrimo paslaugų programa
+Comment[nl]=Hulpmiddel voor systeemherstel
+Comment[ru]=Программа для восстановления системы
+Exec=timeshift-launcher
+Icon=timeshift
+Type=Application
+Terminal=false
+Categories=Settings;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;

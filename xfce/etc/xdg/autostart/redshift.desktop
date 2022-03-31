@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=redshift
+Name=Redshift
+Name[es]=Redshift
+Comment=Set color temperature of display according to time of day
+Comment[es]=Establecer la temperatura de color de la pantalla según la hora del día
+Icon=redshift
+Terminal=false
+OnlyShowIn=XFCE;
+Type=Application
+StartupNotify=false

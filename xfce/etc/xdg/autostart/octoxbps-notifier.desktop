@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=octoxbps-notifier
+Name=OctoXBPS Notifier 
+Name[es]=Notificador OctoXBPS
+Comment=A status tray icon to notify the user of packages changes
+Comment[es]=Un icono de la bandeja de estado para notificar al usuario los cambios en los paquetes
+Icon=octopi
+Terminal=false
+OnlyShowIn=XFCE;
+Type=Application
+StartupNotify=false
+

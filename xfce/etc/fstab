@@ -1,0 +1,1 @@
+tmpfs /home/carlos/Git/void-packages/masterdir/builddir tmpfs rw,nosuid,noatime,nodev,size=2G,mode=1777 0 0

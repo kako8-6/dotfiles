@@ -1,0 +1,68 @@
+#!/bin/sh
+
+ARCH=x86_64
+IMAGE=xfce
+
+while getopts "a:b:hr:" opt; do
+case $opt in
+	a) ARCH="$OPTARG";;
+	b) IMAGE="$OPTARG";;
+	h) echo "${0#/*}: [-a arch] [-b base|xfce|gnome|kde] [-r repo]" >&2; exit 1;;
+	r) REPO="-r $OPTARG $REPO";;
+esac
+done
+shift $((OPTIND - 1))
+
+: ${ARCH:=$(uname -m)}
+
+readonly DATE=$(date +%Y%m%d)
+readonly BASE_IMG=void-live-${ARCH}-${DATE}.iso
+readonly XFCE_IMG=void-live-${ARCH}-${DATE}-xfce.iso
+#readonly GNOME_IMG=void-live-${ARCH}-${DATE}-gnome.iso
+#readonly KDE_IMG=void-live-${ARCH}-${DATE}-kde.iso
+
+# System
+readonly GRUB="grub-i386-efi grub-x86_64-efi"
+readonly INTEL="mesa-vulkan-intel intel-video-accel"
+readonly AMD="xf86-video-amdgpu mesa-vulkan-radeon mesa-vaapi mesa-vdpau"
+readonly NVIDIA="xf86-video-nouveau"
+readonly SV="zramen socklog-void irqbalance earlyoom brightnessctl preload ufw thermald chrony"
+readonly XDG="xdg-user-dirs xdg-utils xdg-desktop-portal"
+readonly FONTS="font-adobe-source-code-pro fonts-droid-ttf liberation-fonts-ttf dejavu-fonts-ttf noto-fonts-ttf noto-fonts-emoji cantarell-fonts"
+readonly PULSE="pulseaudio alsa-plugins-pulseaudio"
+readonly DEV="base-devel xtools"
+readonly XSV="xorg-minimal mesa-dri glxinfo"
+readonly EXTRA="void-repo-nonfree nano flatpak bash-completion htop neofetch wget ffmpeg git"
+readonly BASE_PKGS="dialog cryptsetup lvm2 mdadm void-docs-browse $GRUB $INTEL $AMD $NVIDIA $SV $XDG $FONTS $PULSE $DEV $XSV $EXTRA"
+
+# DE
+readonly LIGHTDM="lightdm-gtk3-greeter lightdm-gtk-greeter-settings numlockx"
+readonly XFCE_PKGS="xfce4 xfce4-whiskermenu-plugin xfce4-pulseaudio-plugin thunar-archive-plugin"
+readonly XFCE_EXTRA="gnome-themes-standard gnome-keyring adwaita-qt network-manager-applet blueman gvfs-mtp papirus-icon-theme xarchiver xdg-desktop-portal-gtk udisks2 scrot redshift timeshift gparted qt5ct octoxbps firefox firefox-i18n-es-MX"
+readonly XFCE="$BASE_PKGS $LIGHTDM $XFCE_PKGS $XFCE_EXTRA"
+#readonly GNOME_PKGS="$BASE_PKGS gdm gnome adwaita-qt polkit-gnome gvfs-goa gvfs-mtp gparted qt5ct octoxbps firefox"
+#readonly KDE_PKGS="$BASE_PKGS sddm kde5 kde5-baseapps ark spectacle kdialog kwrite mpv partitionmanager octoxbps firefox"
+
+[ ! -x mklive.sh ] && exit 0
+
+if [ -z "$IMAGE" -o "$IMAGE" = base ]; then
+	if [ ! -e $BASE_IMG ]; then
+		./mklive.sh -a $ARCH -o $BASE_IMG -p "$BASE_PKGS" ${REPO} "$@"
+	fi
+fi
+if [ -z "$IMAGE" -o "$IMAGE" = xfce ]; then
+	if [ ! -e $XFCE_IMG ]; then
+		./mklive.sh -a $ARCH -o $XFCE_IMG -v linux5.15 -l es_MX.UTF-8 -k la-latin1 -I "$PWD/includedir/xfce/" -C "loglevel=0 console=tty2" -p "$XFCE" ${REPO} "$@"
+	fi
+fi
+
+#if [ -z "$IMAGE" -o "$IMAGE" = gnome ]; then
+#	if [ ! -e $GNOME_IMG ]; then
+#		./mklive.sh -a $ARCH -o $GNOME_IMG -v linux5.15 -l es_MX.UTF-8 -k la-latin1 -I "$PWD/includedir/gnome/" -C "loglevel=0 console=tty2" -p "$GNOME_PKGS" ${REPO} "$@"
+#	fi
+#fi
+#if [ -z "$IMAGE" -o "$IMAGE"  = kde ]; then
+#	if [ ! -e $KDE_IMG ]; then
+#		./mklive.sh -a $ARCH -o $KDE_IMG -v linux5.15 -l es_MX.UTF-8 -k la-latin1 -I "$PWD/includedir/kde/" -C "loglevel=0 console=tty2" -p "$KDE_PKGS" ${REPO} "$@"
+#	fi
+#fi

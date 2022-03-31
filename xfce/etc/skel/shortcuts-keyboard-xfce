@@ -1,0 +1,3 @@
+xfce atajos
+scrot /home/carlos/Imágenes/Capturas/%d_%m_%Y.png
+scrot -s -f /home/carlos/Imágenes/Capturas/%d_%m_%Y.png
