@@ -4,3 +4,7 @@ variety
 virt-mananer
 qemu
 cronie
+php-apache 
+php-mysql 
+apache 
+mariadb
