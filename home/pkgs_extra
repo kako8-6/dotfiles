@@ -1,10 +1,1 @@
-intel-ucode
-caffeine-ng
-variety
-virt-manager
-qemu
-cronie
-php-apache 
-php-mysql 
-apache 
-mariadb
+intel-ucode caffeine-ng variety virt-manager qemu cronie php-apache php-mysql apache mariadb
