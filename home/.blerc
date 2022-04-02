@@ -1,0 +1,5 @@
+# Disable EOF marker like "[ble: EOF]"
+bleopt prompt_eol_mark=''
+
+# Disable auto-complete based on the command history
+bleopt complete_auto_history=

@@ -1,10 +1,10 @@
 # .bashrc
 
 # ble.sh
-[[ $- == *i* ]] && source /home/carlos/.local/share/blesh/ble.sh --noattach
+[[ $- == *i* ]] && source /home/carlos/.local/share/blesh/ble.sh --noattach --rcfile /home/carlos/.blerc
 
-# Si no se ejecuta de forma interactiva, no haga nada.
-# [[ $- != *i* ]] && return
+# If not running interactively, don't do anything
+#[[ $- != *i* ]] && return
 
 # Prompt
 git_branch() {
