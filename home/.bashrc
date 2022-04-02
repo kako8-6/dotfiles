@@ -3,7 +3,7 @@
 # ble.sh
 [[ $- == *i* ]] && source /home/carlos/.local/share/blesh/ble.sh --noattach --rcfile /home/carlos/.blerc
 
-# If not running interactively, don't do anything
+# Si no se ejecuta de forma interactiva, no haga nada
 #[[ $- != *i* ]] && return
 
 # Prompt
