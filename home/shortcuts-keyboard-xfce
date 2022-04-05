@@ -2,5 +2,5 @@ xfce atajos
 # screenshot pantalla completa
 scrot /home/carlos/Imágenes/Capturas/%d_%m_%Y.png
 
-# screenshot selecci
-scrot -s -f -e 'xclip -selection clipboard -t image/png -i $f'
+# screenshot seleccion
+scrot -s -f /home/carlos/Imágenes/Capturas/%d_%m_%Y.png -e 'xclip -selection clipboard -t image/png -i $f'
