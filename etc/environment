@@ -4,3 +4,5 @@
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
 QT_QPA_PLATFORMTHEME=qt5ct
+LANG=es_MX.UTF-8
+LC_COLLATE=C
