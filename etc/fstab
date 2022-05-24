@@ -3,4 +3,4 @@ UUID=a7d98f54-5e8b-41e1-99b0-618eaf34cf32  /	      ext4   defaults,noatime,commi
 UUID=6F21-283A				   /boot/efi  vfat   defaults		           0      2
 UUID=16d8c12f-9b5a-4aa0-a076-75d74c9d71c3  /home      ext4   defaults,noatime,commit=60    0      2
 tmpfs					   /tmp	      tmpfs  defaults,nosuid,nodev,noatime 0      0
-tmpfs /path/void-packages/masterdir/builddir          tmpfs  defaults,noatime,size=16G     0     0
+tmpfs /path/void-packages/masterdir/builddir          tmpfs  defaults,noatime,size=2G     0      0
