@@ -1,10 +1,7 @@
 # .bashrc
 
-# ble.sh
-[[ $- == *i* ]] && source /home/carlos/.local/share/blesh/ble.sh --noattach --rcfile /home/carlos/.blerc
-
 # Si no se ejecuta de forma interactiva, no haga nada
-#[[ $- != *i* ]] && return
+[[ $- != *i* ]] && return
 
 # Prompt
 git_branch() {
@@ -30,5 +27,3 @@ alias xrx='sudo xbps-remove'            # Para eliminar un paquete
 alias xqrs='xbps-query -Rs'             # Para buscar paquetes en repositorios que coincidan con el xbps patrón en su pkgvery short_desc objetos
 alias xqs='xbps-query -s'               # Para consultar paquetes instalados que coincidan con nombre de paquete/versión/descripción
 alias xqr='xbps-query -R'               # Para mostrar información de un paquete disponible en repositorios
-
-[[ ${BLE_VERSION-} ]] && ble-attach
