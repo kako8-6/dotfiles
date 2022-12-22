@@ -330,7 +330,7 @@ ARCH=$(xbps-uhelper arch)
 : ${LOCALE:=en_US.UTF-8}
 : ${INITRAMFS_COMPRESSION:=xz}
 : ${SQUASHFS_COMPRESSION:=xz}
-: ${BASE_SYSTEM_PKG:=base-files ncurses coreutils findutils diffutils libgcc dash bash grep gzip file sed gawk less util-linux which tar man-pages mdocml shadow e2fsprogs btrfs-progs xfsprogs f2fs-tools dosfstools procps-ng tzdata pciutils usbutils iana-etc dhcpcd kbd iproute2 iputils iw wpa_supplicant xbps sudo void-artwork traceroute ethtool kmod acpid eudev runit-void removed-packages glibc-locales linux-firmware-intel linux-firmware-network dracut}
+: ${BASE_SYSTEM_PKG:=base-files ncurses coreutils findutils diffutils libgcc dash bash grep gzip file sed gawk less util-linux which tar man-pages mdocml shadow exfatprogs e2fsprogs btrfs-progs xfsprogs f2fs-tools dosfstools procps-ng tzdata pciutils usbutils iana-etc dhcpcd kbd iproute2 iputils iw wpa_supplicant xbps sudo void-artwork traceroute ethtool kmod acpid eudev runit-void removed-packages glibc-locales linux-firmware-intel linux-firmware-network dracut}
 : ${BOOT_TITLE:="Void Linux"}
 
 # Required packages in the image for a working system.
