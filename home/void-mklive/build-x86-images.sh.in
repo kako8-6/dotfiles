@@ -31,7 +31,7 @@ build_variant() {
     SERVICES="NetworkManager acpid bluetoothd chronyd cronie dbus earlyoom elogind irqbalance lightdm nanoklogd polkitd preload rtkit socklog-unix thermald tlp udevd ufw uuidd zramen"
     # New
     GRUB="grub-i386-efi grub-x86_64-efi"
-    INTEL="mesa-vulkan-intel intel-video-accel intel-undervolt"
+    INTEL="mesa-vulkan-intel intel-video-accel intel-undervolt intel-ucode"
     AMD="xf86-video-amdgpu xf86-video-ati mesa-vulkan-radeon mesa-vaapi mesa-vdpau"
     NVIDIA="xf86-video-nouveau"
     SV="zramen socklog-void irqbalance earlyoom preload ufw brightnessctl thermald chrony cronie tlp"

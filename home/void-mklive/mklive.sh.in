@@ -316,7 +316,7 @@ while getopts "a:b:r:c:C:T:Kk:l:i:I:S:s:o:p:v:h" opt; do
     esac
 done
 shift $((OPTIND - 1))
-XBPS_REPOSITORY="$XBPS_REPOSITORY --repository=https://mirrors.servercentral.com/voidlinux/current --repository=https://mirrors.servercentral.com/voidlinux/current/musl"
+XBPS_REPOSITORY="$XBPS_REPOSITORY --repository=https://mirrors.servercentral.com/voidlinux/current --repository=https://mirrors.servercentral.com/voidlinux/current/musl --repository=https://mirrors.servercentral.com/voidlinux/current/multilib --repository=https://mirrors.servercentral.com/voidlinux/current/nonfree"
 # Configure dracut to use overlayfs for the writable overlay.
 BOOT_CMDLINE="$BOOT_CMDLINE rd.live.overlay.overlayfs=1 "
 
@@ -408,7 +408,7 @@ mkdir -p "$ROOTFS"/etc
 print_step "Installing void pkgs into the rootfs: ${PACKAGE_LIST} ..."
 install_packages
 
-: ${DEFAULT_SERVICE_LIST:=agetty-tty1 agetty-tty2 agetty-tty3 agetty-tty4 agetty-tty5 agetty-tty6 udevd}
+: ${DEFAULT_SERVICE_LIST:=agetty-tty1 agetty-tty2 udevd}
 print_step "Enabling services: ${SERVICE_LIST} ..."
 enable_services ${DEFAULT_SERVICE_LIST} ${SERVICE_LIST}
 
