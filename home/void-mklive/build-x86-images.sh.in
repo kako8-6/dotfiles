@@ -40,7 +40,7 @@ build_variant() {
     PULSE="pulseaudio alsa-plugins-pulseaudio"
     DEV="base-devel xtools"
     XSV="xorg-minimal mesa-dri glxinfo xrandr"
-    EXTRA="void-repo-nonfree void-repo-multilib nano flatpak bash-completion htop neofetch wget ffmpeg git smartmontools"
+    EXTRA="void-repo-nonfree void-repo-multilib nano flatpak bash-completion htop neofetch wget ffmpeg git smartmontools qbittorrent gamemode MangoHud MangoHud-32bit"
     LIGHTDM="lightdm-gtk3-greeter lightdm-gtk-greeter-settings numlockx"
     XFCE_PKGS="xfce4 xfce4-whiskermenu-plugin xfce4-pulseaudio-plugin thunar-archive-plugin"
     XFCE_EXTRA="gnome-themes-standard gnome-keyring adwaita-qt network-manager-applet blueman gvfs-mtp papirus-icon-theme xarchiver xdg-desktop-portal-gtk udisks2 scrot xclip redshift timeshift gparted qt5ct octoxbps firefox firefox-i18n-es-MX"
